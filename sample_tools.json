@@ -1,0 +1,34 @@
+{
+  "tools": [
+    {
+      "name": "weather_fetcher",
+      "description": "Retrieve current weather forecast and summarize temperature trends",
+      "schema": [
+        {"name": "city", "type": "string", "required": true, "description": "Target city name"},
+        {"name": "units", "type": "string", "required": false, "description": "metric or imperial"}
+      ],
+      "example_output": {"summary": "Sunny", "temp_c": 24},
+      "examples": ["weather for Paris", "weather for Tokyo"]
+    },
+    {
+      "name": "climate_inspector",
+      "description": "Analyze temperature trend and forecast precipitation for the given location",
+      "schema": [
+        {"name": "location", "type": "string", "required": true, "description": "City or coordinates"},
+        {"name": "scale", "type": "string", "required": false, "description": "metric or imperial"},
+        {"name": "days", "type": "number", "required": false, "description": "forecast horizon"}
+      ],
+      "example_output": {"trend": "rising", "rain_prob": 0.2},
+      "examples": ["climate summary"]
+    },
+    {
+      "name": "news_digest",
+      "description": "Summarize financial and technology news headlines",
+      "schema": [
+        {"name": "sector", "type": "string", "required": false, "description": "finance or tech"},
+        {"name": "limit", "type": "number", "required": false, "description": "max stories"}
+      ],
+      "example_output": {"headlines": ["Market rallies", "AI breakthrough"]}
+    }
+  ]
+}
